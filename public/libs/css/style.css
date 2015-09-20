@@ -1,0 +1,51 @@
+/*HELPER CLASSES*/
+.text-center{
+text-align: center;
+}
+
+.vert_mid{
+    vertical-align: middle!important;
+}
+/*HELPER CLASSES END*/
+
+
+
+/*PROFILE STYLES*/
+
+.rep {
+color:#1abc9c;
+}
+
+.profile_group {
+margin-bottom:10px!important;
+}
+
+.prof_select{
+border-top:2px solid #1abc9c;
+}
+
+.profile_skills{
+margin-top:20px;
+}
+
+.skills ul li{
+list-style: none;
+}
+
+.skills ul{
+margin-top:20px;
+text-align: left;
+}
+
+#slider, #slider2 {
+margin-top:20px;
+}
+
+.percent{
+position: absolute;
+    width: 100%;
+    z-index: 3;
+    top: 5px;
+    font-size: 16pt;
+}
+/*PROFILE STYLES END*/
