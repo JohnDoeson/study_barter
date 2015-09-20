@@ -24,6 +24,11 @@
 	    	<div class="col-md-2">
 	    		@if(!empty($avatar_url_big))
 	    			<img src="{{$avatar_url_big}}" class="img-responsive" alt="Responsive image">
+	    		@else
+	    		   <a href="#" onclick="document.getElementById('fileID').click(); return false;" />
+	    		   <img  src="http://placehold.it/400x400" alt="" class="img-responsive load_img">
+	    		   </a>
+                <input type="file" id="fileID" style="visibility: hidden;" />
 	    		@endif
 	    	</div>
 		    <div class="col-md-10">
@@ -83,13 +88,9 @@
         <div class="row skills">
             <div class="col-md-6 text-center">
                 <h3>Умею:</h3>
-                    <div class="input-group">
                       <input type="text" class="form-control" placeholder="Добавить" id="search-query-3">
-                      <span class="input-group-btn">
-                        <button type="submit" class="btn"><span class="fui-check"></span></button>
-                      </span>
-                    </div>
-                    <div id="slider" onclick="getPercent(this);"><p class="percent">--</p></div>
+                      <div id="slider" onclick="getPercent(this);"><p class="percent">--</p></div>
+                      <button class="btn btn-success form-control margin">Добавить</button>
                 <table class="table table-hover  table-bordered">
                      <thead>
                          <td>Умение</td>
@@ -134,13 +135,9 @@
             </div>
             <div class="col-md-6 text-center">
                 <h3>Хочу выучить:</h3>
-                    <div class="input-group">
                       <input type="text" class="form-control" placeholder="Добавить" id="search-query-3">
-                      <span class="input-group-btn">
-                        <button type="submit" class="btn"><span class="fui-check"></span></button>
-                      </span>
-                    </div>
-               <div id="slider2" onclick="getPercent(this);"><p class="percent">--</p></div>
+                      <div id="slider2" onclick="getPercent(this);"><p class="percent">--</p></div>
+                      <button class="btn btn-success form-control margin">Добавить</button>
                 <table class="table table-hover  table-bordered">
                      <thead>
                          <td>Умение</td>

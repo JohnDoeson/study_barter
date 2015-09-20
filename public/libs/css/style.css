@@ -48,4 +48,16 @@ position: absolute;
     top: 5px;
     font-size: 16pt;
 }
+
+.load_img{
+border: 1px solid #1abc9c;
+}
+
+.navbar {
+border-radius: 0px;
+}
+
+.margin{
+    margin-top: 10px;
+}
 /*PROFILE STYLES END*/
