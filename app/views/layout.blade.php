@@ -56,7 +56,7 @@
               </ul>
             </li>
           @else
-            <li><a href="https://oauth.vk.com/authorize?client_id=5073634&display=page&redirect_uri=http://localhost/studybarter/public/users/vklogin&scope=photos&response_type=code">VK</a></li>
+            <li><a href="https://oauth.vk.com/authorize?client_id=5073634&display=page&redirect_uri=http://localhost/study_barter/public/users/vklogin&scope=photos&response_type=code">VK</a></li>
             <li><a href="login">Вход</a></li>
             <li><a href="register">Регистрация</a></li>
           @endif
