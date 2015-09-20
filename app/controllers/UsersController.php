@@ -5,7 +5,7 @@ class UsersController extends BaseController {
 	public function getVklogin() {
 		$code = Input::get('code');
 		//OAuth::setHttpClient('CurlClient');
-		$vk = OAuth::consumer('Vkontakte','http://localhost/studybarter/public/users/vklogin');
+		$vk = OAuth::consumer('Vkontakte','http://localhost/study_barter/public/users/vklogin');
 		//var_dump($code);
 		if (!empty($code)) {
 
