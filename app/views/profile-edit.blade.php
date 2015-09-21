@@ -2,6 +2,8 @@
 @section('title') Профиль @stop
 @section('headExtra')
 <script type="text/javascript" src="{{ URL::asset('libs/js/profile.js') }}"></script>
+
+
 @stop
 @section('content')
 	<div class="container">
@@ -32,6 +34,7 @@
 	    		@endif
 	    	</div>
 		    <div class="col-md-10">
+		  
 			    <div class="form-group ">
 		        	<label class="col-sm-3 control-label" for="formGroupName">Имя</label>
 		        	<div class="col-sm-9 profile_group">
@@ -48,7 +51,7 @@
 		        		@if($is_vk)
 		        			<p>{{ $surname }}</p>
 		        		@else
-		        			<input value="{{ $surname }}" class="form-control" type="text" id="formGroupSurname" placeholder="Ваша фамилия">
+		        			<input value="{{ $surname }}" class="form-control" type="text" id="formGroupSurname" placeholder="Ваша фамилия" >
 		        		@endif
 		        	</div>
 		        </div>
@@ -76,9 +79,16 @@
 						</div>
 		        	</div>
 		        </div>
-
-
+		        
+		            <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Обо мне</label>
+                    <div class="col-sm-9 profile_group">
+                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    </div>
 		    </div>
+		    
+		
 		</div>	
 	</div>
 	
@@ -88,7 +98,13 @@
         <div class="row skills">
             <div class="col-md-6 text-center">
                 <h3>Умею:</h3>
-                      <input type="text" class="form-control" placeholder="Добавить" id="search-query-3">
+                    <select multiple="multiple" class="form-control multiselect multiselect-info">
+                      <option value="0">JavaScript</option>
+                      <option value="1" >CSS3</option>
+                      <option value="2" >HTML5</option>
+                      <option value="3" >PHP</option>
+                      <option value="4">MySQL</option>
+                    </select>
                       <div id="slider" onclick="getPercent(this);"><p class="percent">--</p></div>
                       <button class="btn btn-success form-control margin">Добавить</button>
                 <table class="table table-hover  table-bordered">
@@ -97,8 +113,9 @@
                          <td>Навык</td>
                      </thead>
                     <tr>
-                           <td class="vert_mid">Javascript</td>
+                           <td class="vert_mid cell_skill">Javascript</td>
                            <td>
+                               <a href="#" class="cross"><span class="fui-cross"></span></a>
                                <div>
                                   <label class="skill_value" for="">10%</label>
                                    <div class="progress">
@@ -109,8 +126,9 @@
                      </tr>
                      
                       <tr>
-                           <td class="vert_mid">Javascript</td>
+                           <td class="vert_mid cell_skill">Javascript</td>
                            <td>
+                               <a href="#" class="cross"><span class="fui-cross"></span></a>
                                <div>
                                   <label class="skill_value" for="">50%</label>
                                    <div class="progress">
@@ -121,8 +139,9 @@
                      </tr>
                      
                       <tr>
-                           <td class="vert_mid">Javascript</td>
+                           <td class="vert_mid cell_skill">Javascript</td>
                            <td>
+                               <a href="#" class="cross"><span class="fui-cross"></span></a>
                                <div>
                                   <label class="skill_value" for="">60%</label>
                                    <div class="progress">
@@ -135,7 +154,13 @@
             </div>
             <div class="col-md-6 text-center">
                 <h3>Хочу выучить:</h3>
-                      <input type="text" class="form-control" placeholder="Добавить" id="search-query-3">
+                    <select multiple="multiple" class="form-control multiselect multiselect-info">
+                      <option value="0">JavaScript</option>
+                      <option value="1" >CSS3</option>
+                      <option value="2" >HTML5</option>
+                      <option value="3" >PHP</option>
+                      <option value="4">MySQL</option>
+                    </select>
                       <div id="slider2" onclick="getPercent(this);"><p class="percent">--</p></div>
                       <button class="btn btn-success form-control margin">Добавить</button>
                 <table class="table table-hover  table-bordered">
@@ -144,9 +169,11 @@
                          <td>Навык</td>
                      </thead>
                       <tr>
-                           <td class="vert_mid">Javascript</td>
+                           <td class="vert_mid cell_skill">Javascript</td>
                            <td>
+                              <a href="#" class="cross"><span class="fui-cross"></span></a>
                                <div>
+                                  
                                   <label class="skill_value" for="">10%</label>
                                    <div class="progress">
                                          <div class="progress-bar progress-bar-danger" style="width: 10%;"></div> 
@@ -154,10 +181,10 @@
                                </div>
                           </td>
                      </tr>
-                    
                       <tr>
-                           <td class="vert_mid">Javascript</td>
+                           <td class="vert_mid cell_skill">Javascript</td>
                            <td>
+                               <a href="#" class="cross"><span class="fui-cross"></span></a>
                                <div>
                                   <label class="skill_value" for="">50%</label>
                                    <div class="progress">
@@ -168,8 +195,9 @@
                      </tr>
                      
                        <tr>
-                           <td class="vert_mid">Javascript</td>
+                           <td class="vert_mid cell_skill">Javascript</td>
                            <td>
+                               <a href="#" class="cross"><span class="fui-cross"></span></a>
                                <div>
                                   <label class="skill_value" for="">60%</label>
                                    <div class="progress">
@@ -182,34 +210,11 @@
             </div>
         </div>
     </div>
+    
+    
 </section>
 <script>
-var $slider = $("#slider");
-var $slider2 = $("#slider2");
-if ($slider.length > 0) {
-  $slider.slider({
-    min: 0,
-    max: 10,
-    value: 5,
-    orientation: "horizontal",
-    range: "min"
-  }),$slider2.slider({
-    min: 0,
-    max: 10,
-    value: 5,
-    orientation: "horizontal",
-    range: "min"
-  })
-}
-    
-    
-var getPercent = function (node){
-   var nodeLength = node.childNodes[1];
-   var sliderWidth = parseInt($("#slider").css("width"));
-   var percent = parseInt($(nodeLength).css("width"))/sliderWidth*100;
-   var textHolder = node.childNodes[0];
-   textHolder.innerHTML = percent.toFixed()+"%";
-}
+
 
 //var func = $(".ui-slider-range").on('mouseout',function(){
 //    var sliderWidth = parseInt($("#slider").css("width"));
